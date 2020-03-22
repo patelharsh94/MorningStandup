@@ -18,11 +18,7 @@ class _Events extends State<Events> {
         onPressed: () {
           // Add your onPressed code here!
         },
-        child: Text(
-          '+',
-          textAlign: TextAlign.center,
-          style: TextStyle(fontSize: 24, color: Colors.deepPurpleAccent),
-        ),
+        child: Icon(Icons.add, color: Colors.deepPurpleAccent,),
         backgroundColor: Colors.deepOrangeAccent,
       ),
     );
