@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:morning_standup/events.dart';
+import 'package:morning_standup/interestings.dart';
+import 'package:morning_standup/new_faces.dart';
 
 void main() => runApp(MyApp());
 
@@ -10,7 +13,8 @@ class MyApp extends StatelessWidget {
       title: 'Morning Standup',
       theme: ThemeData(
         primarySwatch: Colors.deepPurple,
-        accentColor: Colors.deepOrangeAccent
+        accentColor: Colors.deepOrangeAccent,
+        brightness: Brightness.light
       ),
       home: MyHomePage(title: 'Morning Standup'),
     );
@@ -30,10 +34,23 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
 
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      )
+    return DefaultTabController(
+      length: 3,
+      child: Scaffold(
+        appBar: AppBar(
+          bottom: TabBar(tabs: [
+            Tab(icon: Icon(Icons.face, color: Colors.deepOrange[200],), text: 'New Faces',),
+            Tab(icon: Icon(Icons.lightbulb_outline, color: Colors.deepOrange[200]), text: 'Interesting',),
+            Tab(icon: Icon(Icons.event, color: Colors.deepOrange[200]), text: 'Events',),
+          ]),
+          title: Text(widget.title),
+        ),
+        body: TabBarView(children: [
+          NewFaces(),
+          Interestings(),
+          Events()
+        ]),
+      ),
     );
   }
 }
