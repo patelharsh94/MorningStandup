@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:morning_standup/events.dart';
-import 'package:morning_standup/interestings.dart';
-import 'package:morning_standup/new_faces.dart';
+import 'package:virtualstandup/screens/events.dart';
+import 'package:virtualstandup/screens/interestings.dart';
+import 'package:virtualstandup/screens/new_faces.dart';
 
 void main() => runApp(MyApp());
 
@@ -14,7 +14,6 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.deepPurple,
         accentColor: Colors.deepOrangeAccent,
-        brightness: Brightness.light
       ),
       home: MyHomePage(title: 'Morning Standup'),
     );
