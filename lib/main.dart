@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:virtualstandup/models/LoginForm.dart';
 import 'package:virtualstandup/screens/events.dart';
 import 'package:virtualstandup/screens/interestings.dart';
+import 'package:virtualstandup/screens/login_sign_up.dart';
 import 'package:virtualstandup/screens/new_faces.dart';
 
 void main() => runApp(MyApp());
@@ -35,21 +37,29 @@ class _MyHomePageState extends State<MyHomePage> {
 
     return DefaultTabController(
       length: 3,
-      child: Scaffold(
-        appBar: AppBar(
-          bottom: TabBar(tabs: [
-            Tab(icon: Icon(Icons.face, color: Colors.deepOrange[200],), text: 'New Faces',),
-            Tab(icon: Icon(Icons.lightbulb_outline, color: Colors.deepOrange[200]), text: 'Interesting',),
-            Tab(icon: Icon(Icons.event, color: Colors.deepOrange[200]), text: 'Events',),
-          ]),
-          title: Text(widget.title),
-        ),
-        body: TabBarView(children: [
-          NewFaces(),
-          Interestings(),
-          Events()
-        ]),
-      ),
+      child: showLoginOrSignUp()
     );
+  }
+
+  Widget showVirtualStandUp(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        bottom: TabBar(tabs: [
+          Tab(icon: Icon(Icons.face, color: Colors.deepOrange[200],), text: 'New Faces',),
+          Tab(icon: Icon(Icons.lightbulb_outline, color: Colors.deepOrange[200]), text: 'Interesting',),
+          Tab(icon: Icon(Icons.event, color: Colors.deepOrange[200]), text: 'Events',),
+        ]),
+        title: Text(widget.title),
+      ),
+      body: TabBarView(children: [
+        NewFaces(),
+        Interestings(),
+        Events()
+      ]),
+    );
+  }
+
+  Widget showLoginOrSignUp() {
+    return LoginSignUp();
   }
 }

@@ -19,7 +19,7 @@ class _LoginSignUpState extends State<LoginSignUp> {
         ),
         body: ListView(
           children: <Widget>[
-            FlutterLogo(),
+            FlutterLogo(size: 100.0,),
             LoginForm()
           ],
         ));
